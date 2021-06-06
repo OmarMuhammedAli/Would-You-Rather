@@ -199,10 +199,6 @@ html {
 	margin: auto;
   }
   
-  .poll-nav .active {
-	background-color: #f5f5f5;
-  }
-  
   .poll-nav a {
 	cursor: pointer;
 	background-color: #e6e1e6;
@@ -210,6 +206,10 @@ html {
 	height: 50px;
 	display: flex;
 	text-decoration: none;
+  }
+
+  .poll-nav a:hover {
+	background-color: #f5f5f5;
   }
   .poll-nav a img {
 	margin: auto;
