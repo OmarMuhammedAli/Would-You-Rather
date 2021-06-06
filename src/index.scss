@@ -19,6 +19,10 @@ html {
 	overflow: auto;
 	min-height: 100vh;
   }
+
+  ul {
+	  list-style: none;
+  }
   
   @keyframes gradient {
 	0% {
@@ -282,37 +286,37 @@ html {
 	color: var(--main-color-primary-text);
   }
   
-  .questions-list .question:nth-of-type(odd) .voteBtn,
-  .question.color-secondary .voteBtn {
+  .questions-list .question:nth-of-type(odd) .vote-btn,
+  .question.color-secondary .vote-btn {
 	border: 2px solid #cfe7d6;
 	background-color: #e4ffe5;
 	color: var(--main-color-secondary-main);
   }
   
-  .questions-list .question:nth-child(even) .voteBtn,
-  .question.color-primary .voteBtn {
+  .questions-list .question:nth-child(even) .vote-btn,
+  .question.color-primary .vote-btn {
 	border: 2px solid #cfdde7;
 	background-color: #e4f4ff;
 	color: var(--main-color-primary-main);
   }
   
-  .questions-list .question:nth-of-type(odd) .voteBtn:hover,
-  .question.color-secondary .voteBtn:hover {
+  .questions-list .question:nth-of-type(odd) .vote-btn:hover,
+  .question.color-secondary .vote-btn:hover {
 	background-color: #d1ffd6;
   }
   
-  .questions-list .question:nth-of-type(odd) .voteBtn:active,
-  .question.color-secondary .voteBtn:active {
+  .questions-list .question:nth-of-type(odd) .vote-btn:active,
+  .question.color-secondary .vote-btn:active {
 	background-color: #abffb4;
   }
   
-  .questions-list .question:nth-of-type(even) .voteBtn:hover,
-  .question.color-primary .voteBtn:hover {
+  .questions-list .question:nth-of-type(even) .vote-btn:hover,
+  .question.color-primary .vote-btn:hover {
 	background-color: #d1e8ff;
   }
   
-  .questions-list .question:nth-of-type(even) .voteBtn:active,
-  .question.color-primary .voteBtn:active {
+  .questions-list .question:nth-of-type(even) .vote-btn:active,
+  .question.color-primary .vote-btn:active {
 	background-color: #94c9ff;
   }
   
@@ -348,7 +352,7 @@ html {
 	margin-block-start: 6px;
   }
   
-  .question-header p {
+  .question-header div {
 	display: inline;
 	color: #f0f1f2;
 	font-size: 16px;
@@ -453,7 +457,7 @@ html {
 	border-color: var(--main-color-secondary-radio);
   }
   
-  .voteBtn {
+  .vote-btn {
 	cursor: pointer;
 	border-radius: 6px;
 	font-size: 15px;
@@ -463,7 +467,7 @@ html {
 	margin-top: 10px;
   }
   
-  .voteBtn:focus {
+  .vote-btn:focus {
 	outline: 0;
   }
   
