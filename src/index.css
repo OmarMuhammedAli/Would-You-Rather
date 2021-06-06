@@ -750,11 +750,6 @@ label {
   margin: 0;
 }
 
-#signup-form p + p {
-  margin: 0;
-  font-weight: 600;
-}
-
 #login-form p + p + p {
   font-weight: 500;
   margin-bottom: 5px;
@@ -791,10 +786,6 @@ label {
   color: var(--main-color-secondary-main);
 }
 
-.login-content .login-heading.signup {
-  color: var(--main-color-primary-main);
-}
-
 .login-content img {
   width: 150px;
 }
@@ -815,7 +806,6 @@ label {
 }
 
 #sign-in,
-#sign-up,
 #submit {
   cursor: pointer;
   border: none;
@@ -841,23 +831,19 @@ label {
   background-color: #64caa5;
 }
 
-#sign-up,
 #submit {
   background-color: var(--main-color-primary-main);
 }
 
-#sign-up:hover,
 #submit:hover {
   background-color: #82b5e0;
 }
 
-#sign-up:active,
 #submit:active {
   background-color: #64b3ca;
 }
 
 #sign-in:focus,
-#sign-up:focus,
 #submit:focus {
   outline: 0;
 }
