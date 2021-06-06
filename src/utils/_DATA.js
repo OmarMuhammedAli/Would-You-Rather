@@ -1,10 +1,10 @@
 import {formatQuestion} from './helpers'
-import {questionsObject} from './db/questions.json'
-import {usersObject} from './db/users.json'
+import questionsJSON from './db/questions'
+import usersJSON from './db/users'
 
-let users = usersObject
+let users = usersJSON
 
-let questions = questionsObject
+let questions = questionsJSON
 
 
 
