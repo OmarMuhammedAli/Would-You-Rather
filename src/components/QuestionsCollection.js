@@ -1,12 +1,16 @@
 import React, { Component } from "react";
+import Question from "./Question";
 
 export default class QuestionsCollection extends Component {
   render() {
+    const { ids } = this.props;
     return (
       <ul className="questions-list">
-        {QuestionsCollection.length < 1 ? (
-          this.props.ids.map((id) => (
-            <li key={id}>{id}</li>
+        {!ids.length < 1 ? (
+          ids.map((id) => (
+            <li key={id}>
+              <Question id={id} />
+            </li>
           ))
         ) : this.props.status === "answered" ? (
           <p id="no-questions">You haven't answered any questions yet</p>
