@@ -5,7 +5,7 @@ export default class QuestionsCollection extends Component {
   render() {
     const { ids } = this.props;
     return (
-      <ul className="questions-list">
+      <div className="questions-list">
         {!ids.length < 1 ? (
           ids.map((id) => (
             <li key={id}>
@@ -17,7 +17,7 @@ export default class QuestionsCollection extends Component {
         ) : (
           <p id="no-questions">You have answered all the question!</p>
         )}
-      </ul>
+      </div>
     );
   }
 }

@@ -20,7 +20,7 @@ html {
 	min-height: 100vh;
   }
 
-  ul {
+  div {
 	  list-style: none;
   }
   
@@ -276,13 +276,13 @@ html {
 	border-left: 2px solid var(--main-color-primary-main);
   }
   
-  .questions-list .question:nth-of-type(odd) .content-text .would-you,
-  .question.color-secondary .would-you {
+  .questions-list .question:nth-of-type(odd) .content-text .would-you-rather,
+  .question.color-secondary .would-you-rather {
 	color: var(--main-color-secondary-text);
   }
   
-  .questions-list .question:nth-child(even) .content-text .would-you,
-  .question.color-primary .would-you {
+  .questions-list .question:nth-child(even) .content-text .would-you-rather,
+  .question.color-primary .would-you-rather {
 	color: var(--main-color-primary-text);
   }
   
@@ -398,7 +398,7 @@ html {
 	width: 80%;
   }
   
-  .content-text .would-you {
+  .content-text .would-you-rather {
 	font-size: 20px;
 	font-weight: 700;
 	margin: 0 0 10px 0;

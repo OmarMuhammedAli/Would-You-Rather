@@ -15,7 +15,7 @@ class Question extends Component {
           </div>
           <div className="content-separator"></div>
           <div className="content-text">
-            <p className="would-you">Would You Rather</p>
+            <p className="would-you-rather">Would You Rather</p>
             <label>{question.optionOne.text}</label>
             <button className="vote-btn">View Question</button>
           </div>
