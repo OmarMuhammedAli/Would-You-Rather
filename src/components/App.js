@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { handleInitialFetch } from "../actions/shared";
 import LoginView from "./LoginView";
-import DashboardNavigation from "./DashboardNavigation";
+import Dashboard from "./Dashboard";
 import LoadingBar from "react-redux-loading";
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
       <Fragment>
         <LoadingBar />
         <div className="app-content">
-          {loading ? null : !loggedIn ? <LoginView /> : <DashboardNavigation />}
+          {loading ? null : !loggedIn ? <LoginView /> : <Dashboard/>}
         </div>
       </Fragment>
     );
