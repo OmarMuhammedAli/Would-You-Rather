@@ -145,10 +145,10 @@ div {
   padding-top: 25px;
   background-color: #f5f5f5;
 }
-.tab-navigation {
+.tab-nav {
   background-color: #e6e1e6;
 }
-#tab-user {
+#tab-contender {
   font-weight: 500;
   position: relative;
   float: right;
@@ -158,14 +158,17 @@ div {
   padding: 8px 25px 5px 0;
 }
 
-#tab-user img {
+#tab-contender img {
   vertical-align: middle;
   cursor: default;
   height: 28px;
   padding: 0;
 }
-
-#tab-user:hover .dropdown-content {
+#logout-hover:hover{
+  background-color: #b4b4b4;
+  cursor: pointer;
+}
+#tab-contender:hover .dropdown-content {
   display: block;
 }
 
