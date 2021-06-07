@@ -573,11 +573,11 @@ html {
   /*          Leaderboard Style            */
   /* ===================================== */
   
-  .leaderboard {
+  .lb {
 	margin-bottom: 60px;
   }
   
-  .player {
+  .contender {
 	position: relative;
 	margin: auto;
 	width: 550px;
@@ -595,7 +595,7 @@ html {
 	border-right: 60px solid transparent;
 	top: 0;
   }
-  .player:nth-child(n + 4) .ribbon {
+  .contender:nth-child(n + 4) .ribbon {
 	display: none;
   }
   
@@ -606,32 +606,32 @@ html {
 	top: -52px;
 	left: 6px;
   }
-  .player:nth-child(1) .ribbon img {
+  .contender:nth-child(1) .ribbon img {
 	content: url("./images/trophies/gold-trophy.png");
   }
-  .player:nth-child(2) .ribbon img {
+  .contender:nth-child(2) .ribbon img {
 	content: url("./images/trophies/silver-trophy.png");
   }
-  .player:nth-child(3) .ribbon img {
+  .contender:nth-child(3) .ribbon img {
 	content: url("./images/trophies/bronze-trophy.png");
   }
   
-  .player-content {
+  .contender-content {
 	padding: 15px 10px 15px 10px;
 	border: 2px solid var(--sub-color-primary-accent);
 	display: flex;
   }
   
-  .player-content > div {
+  .contender-content > div {
 	margin: auto 10px auto 10px;
   }
   
-  .player-content .player-image {
+  .contender-content .contender-image {
 	margin: auto;
 	width: 25%;
   }
   
-  .player-image img {
+  .contender-image img {
 	width: auto;
 	height: 125px;
 	top: 0;
@@ -641,7 +641,7 @@ html {
 	margin: auto;
   }
   
-  .player-content .content-text {
+  .contender-content .content-text {
 	padding: 0 25px 0 15px;
 	border: 2px solid #e6e1e6;
 	border-top: 0;
@@ -649,17 +649,17 @@ html {
 	width: 55%;
   }
   
-  .total-score {
+  .total-points {
 	width: 20%;
   }
   
-  .total-score {
+  .total-points {
 	border: 2px solid #e6e1e6;
 	margin: auto;
 	text-align: center;
   }
   
-  .total-score-header {
+  .total-points-header {
 	border-bottom: 2px solid #d8d6d8;
 	margin: auto;
 	padding: 10px;
@@ -669,7 +669,7 @@ html {
 	font-weight: 700;
   }
   
-  .score-circle {
+  .points-circle {
 	margin: 10px 15px 10px 15px;
 	width: 50px;
 	height: 50px;
@@ -682,31 +682,21 @@ html {
 	background: #565151;
   }
   
-  .player:nth-child(1) .score-circle {
+  .contender:nth-child(1) .points-circle {
 	background: #f1b80d;
   }
-  .player:nth-child(2) .score-circle {
+  .contender:nth-child(2) .points-circle {
 	background: silver;
   }
-  .player:nth-child(3) .score-circle {
+  .contender:nth-child(3) .points-circle {
 	background: #82643c;
   }
   
-  .player-name {
+  .contender-name {
 	margin-top: 0;
 	text-align: left;
 	font-size: 20px;
 	font-weight: 700;
-  }
-  
-  .player-stats p {
-	font-size: 14px;
-	font-weight: 600;
-	float: left;
-  }
-  
-  .player-stats p + p {
-	float: right;
   }
   
   /* ===================================== */
