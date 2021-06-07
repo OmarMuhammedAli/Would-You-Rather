@@ -1,6 +1,5 @@
 import { RECEIVE_QUESTIONS, ADD_ANSWER, ADD_QUESTION } from "./types";
 import { saveQuestionAnswer, saveQuestion } from "../utils/api";
-import { formatQuestion } from "../utils/helpers";
 
 export const receiveQuestions = (questions) => ({
   type: RECEIVE_QUESTIONS,
@@ -14,13 +13,9 @@ const addAnswer = ({ qid, authedUser, answer }) => ({
   answer,
 });
 
-const addQuestion = ({ optionOneText, optionTwoText, authedUser }) => ({
+const addQuestion = (question) => ({
   type: ADD_QUESTION,
-  question: formatQuestion({
-    optionOneText,
-    optionTwoText,
-    author: authedUser,
-  }),
+  question
 });
 
 export const handleAddAnswer = (qid, answer) => async (dispatch, getState) => {
@@ -36,13 +31,12 @@ export const handleAddAnswer = (qid, answer) => async (dispatch, getState) => {
 export const handleAddQuestion =
   (optionOneText, optionTwoText) => async (dispatch, getState) => {
     const { authedUser } = getState();
-    try {
-      await saveQuestion({ optionOneText, optionTwoText, author: authedUser });
-      return dispatch(
-        addQuestion({ optionOneText, optionTwoText, authedUser })
-      );
-    } catch (e) {
+    saveQuestion({ optionOneText, optionTwoText, author: authedUser })
+    .then((question) => dispatch(
+      addQuestion(question)
+    ))
+    .catch (e =>  {
       console.warn("Error Occured in handleAddQuestion: ", e);
       alert("Something went wrong. Please try again!");
-    }
-  };
+    })
+  }
