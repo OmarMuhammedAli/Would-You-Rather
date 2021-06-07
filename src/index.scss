@@ -53,7 +53,6 @@ div {
 /*Not Found*/
 
 .not-found {
-  margin-top: 12vh;
   text-align: center;
 }
 
@@ -63,7 +62,7 @@ div {
   width: 600px;
 }
 
-#returnHome {
+#back-to-home {
   cursor: pointer;
   background: var(--sub-color-primary-main);
   border: 1px solid darkgray;
@@ -76,15 +75,15 @@ div {
   margin-top: 20px;
 }
 
-#returnHome:hover {
+#back-to-home:hover {
   background: var(--sub-color-primary-accent);
 }
 
-#returnHome:active {
+#back-to-home:active {
   background: #d2d2d2;
 }
 
-#returnHome:focus {
+#back-to-home:focus {
   outline: 0;
 }
 
