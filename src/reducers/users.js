@@ -1,4 +1,4 @@
-import { RECEIVE_USERS } from "../actions/types";
+import { RECEIVE_USERS, ADD_ANSWER } from "../actions/types";
 
 const users = (store = {}, action) => {
   switch (action.type) {
@@ -7,6 +7,17 @@ const users = (store = {}, action) => {
         ...store,
         ...action.users,
       };
+    case ADD_ANSWER:
+      return {
+        ...store,
+        [action.authedUser]: {
+          ...store[action.authedUser],
+          answers: {
+            ...store[action.authedUser].answers,
+            [action.qid]: action.answer
+          }
+        }
+      }
     default:
       return store;
   }

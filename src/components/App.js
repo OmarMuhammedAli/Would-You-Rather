@@ -4,18 +4,19 @@ import { handleInitialFetch } from "../actions/shared";
 import LoginView from "./LoginView";
 import Dashboard from "./Dashboard";
 import LoadingBar from "react-redux-loading";
+import QuestionView from './QuestionView'
 
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialFetch());
   }
   render() {
-    const { questionsIDs, loggedIn, loading } = this.props;
+    const {loggedIn, loading} = this.props;
     return (
       <Fragment>
         <LoadingBar />
         <div className="app-content">
-          {loading ? null : !loggedIn ? <LoginView /> : <Dashboard/>}
+          {loading ? null : !loggedIn ? <LoginView /> : <QuestionView match={{params: {id: 'vthrdm985a262al8qx3do'}}} />}
         </div>
       </Fragment>
     );

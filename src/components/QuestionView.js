@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import {handleAddAnswer} from '../actions/questions'
 
 class QuestionView extends Component {
   constructor() {
@@ -23,7 +24,9 @@ class QuestionView extends Component {
   };
   handleChoiceSubmit = (e) => {
     e.preventDefault();
-    // change the answer in the store
+    const {dispatch, question} = this.props
+    const {choice} = this.state
+    dispatch(handleAddAnswer(question.id, choice))
   };
   renderQuestionCardHeader = () => (
     <div className="question-header">
