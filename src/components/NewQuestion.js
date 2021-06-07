@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { handleAddQuestion } from "../actions/questions";
 
 class NewQuestion extends Component {
   constructor() {
@@ -17,6 +18,18 @@ class NewQuestion extends Component {
   };
   handleOptionsSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      this.state.optionOne.trim().length < 1 ||
+      this.state.optionTwo.trim().length < 1
+    ) {
+      alert("Please fill up both options before submitting your question!");
+    } else {
+      this.props.dispatch(
+        handleAddQuestion(this.state.optionOne, this.state.optionTwo)
+      );
+      // Add the home / route to the history!!
+    }
   };
   render() {
     return (
@@ -45,7 +58,9 @@ class NewQuestion extends Component {
               value={this.state.optionTwo}
               onChange={this.handleOptionChange}
             />
-            <button type="submit" id='submit'>Submit Question</button>
+            <button type="submit" id="submit">
+              Submit Question
+            </button>
           </form>
         </div>
       </div>

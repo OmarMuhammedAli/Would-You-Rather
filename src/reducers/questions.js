@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, ADD_ANSWER } from "../actions/types";
+import { RECEIVE_QUESTIONS, ADD_ANSWER, ADD_QUESTION } from "../actions/types";
 
 const questions = (store = {}, action) => {
   switch (action.type) {
@@ -18,6 +18,11 @@ const questions = (store = {}, action) => {
           }
         }
       }
+      case ADD_QUESTION:
+        return {
+          ...store,
+          [action.question.id]: action.question
+        }
     default:
       return store;
   }
