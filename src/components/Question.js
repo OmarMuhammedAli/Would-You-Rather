@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 class Question extends Component {
   render() {
-    const { user, question } = this.props;
+    const { user, question, id } = this.props;
     return (
       <div className="question">
         <div className="question-header">
@@ -17,7 +18,9 @@ class Question extends Component {
           <div className="content-text">
             <p className="would-you-rather">Would You Rather</p>
             <label>{question.optionOne.text}</label>
-            <button className="vote-btn">View Question</button>
+            <NavLink to={`/questions/${id}`}>
+              <button className="vote-btn">View Question</button>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -25,7 +28,7 @@ class Question extends Component {
   }
 }
 
-const mapStateToProps = ({ users, questions, authedUser }, { id }) => {
+const mapStateToProps = ({ users, questions }, { id }) => {
   const question = questions[id];
   const user = users[question.author];
   return {

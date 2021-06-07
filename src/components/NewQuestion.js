@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleAddQuestion } from "../actions/questions";
+import {withRouter} from 'react-router-dom'
 
 class NewQuestion extends Component {
   constructor() {
@@ -28,6 +29,7 @@ class NewQuestion extends Component {
       this.props.dispatch(
         handleAddQuestion(this.state.optionOne, this.state.optionTwo)
       );
+      this.props.history.push('/')
       // Add the home / route to the history!!
     }
   };
@@ -68,4 +70,4 @@ class NewQuestion extends Component {
   }
 }
 
-export default connect()(NewQuestion);
+export default withRouter(connect()(NewQuestion));

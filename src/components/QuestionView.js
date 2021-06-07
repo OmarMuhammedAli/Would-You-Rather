@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {handleAddAnswer} from '../actions/questions'
+import { handleAddAnswer } from "../actions/questions";
+import { withRouter, Redirect } from "react-router-dom";
 
 class QuestionView extends Component {
   constructor() {
@@ -13,8 +14,7 @@ class QuestionView extends Component {
     Math.round((optionCount / votesCount) * 100);
   handleBackButton = (e) => {
     e.preventDefault();
-    // Add a conditional push to the history for the answered or
-    // the unanswered questions after adding router
+    this.props.history.push("/questions");
   };
   handleChoiceChange = (e) => {
     const choice = e.target.value;
@@ -24,9 +24,10 @@ class QuestionView extends Component {
   };
   handleChoiceSubmit = (e) => {
     e.preventDefault();
-    const {dispatch, question} = this.props
-    const {choice} = this.state
-    dispatch(handleAddAnswer(question.id, choice))
+    const { dispatch, question } = this.props;
+    const { choice } = this.state;
+    dispatch(handleAddAnswer(question.id, choice));
+
   };
   renderQuestionCardHeader = () => (
     <div className="question-header">
@@ -55,6 +56,7 @@ class QuestionView extends Component {
         onChange={this.handleChoiceChange}
       />
       <label htmlFor="optionTwo">{this.props.question.optionTwo.text}</label>
+      
       <button value="Confirm Choice" type="submit" className="vote-btn">
         Vote!
       </button>
@@ -90,8 +92,13 @@ class QuestionView extends Component {
   );
   render() {
     const { question, hasAnswered } = this.props;
-    const votesCount =
-      question.optionOne.votes.length + question.optionTwo.votes.length;
+    let votesCount;
+    try {
+      votesCount =
+        question.optionOne.votes.length + question.optionTwo.votes.length;
+    } catch {
+      return <Redirect to="/404" />;
+    }
 
     return (
       <div className="question color-primary">
@@ -125,16 +132,17 @@ class QuestionView extends Component {
 }
 
 const mapStateToProps = ({ authedUser, users, questions }, props) => {
-  const { id } = props.match.params;
+  const { question_id } = props.match.params;
 
   return {
-    question: questions[id] ? questions[id] : null,
-    user: questions[id] ? users[questions[id].author] : null,
-    hasAnswered:
-      questions[id].optionOne.votes.includes(authedUser) ||
-      questions[id].optionTwo.votes.includes(authedUser),
+    question: questions[question_id] ? questions[question_id] : null,
+    user: questions[question_id] ? users[questions[question_id].author] : null,
+    hasAnswered: questions[question_id]
+      ? questions[question_id].optionOne.votes.includes(authedUser) ||
+        questions[question_id].optionTwo.votes.includes(authedUser)
+      : null,
     authedUser,
   };
 };
 
-export default connect(mapStateToProps)(QuestionView);
+export default withRouter(connect(mapStateToProps)(QuestionView));
