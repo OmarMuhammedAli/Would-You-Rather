@@ -91,7 +91,7 @@ class QuestionView extends Component {
     </div>
   );
   render() {
-    const { question, hasAnswered } = this.props;
+    const { question, hasAnswered, user } = this.props;
     let votesCount;
     try {
       votesCount =
@@ -103,10 +103,10 @@ class QuestionView extends Component {
     return (
       <div className="question color-primary">
         {this.renderQuestionCardHeader()}
-        <div className={"item-content" + !hasAnswered ? "" : " answer-content"}>
-          {/* <div className="content-image">
+        <div className={`item-content${hasAnswered ? " answer-content" : ""}`}>
+          <div className="content-image">
             <img alt="user avatar" src={user.avatarURL} />
-          </div> */}
+          </div>
           <div
             className={
               "content-separator" + !hasAnswered ? "" : " answer-separator"
