@@ -7,7 +7,6 @@ class LoginView extends Component {
     e.preventDefault();
     const {dispatch} = this.props
     const dropDownValue = document.getElementById('players').value
-    console.log(dropDownValue)
     dispatch(setAuthedUser(dropDownValue))
   };
   render() {
@@ -15,7 +14,7 @@ class LoginView extends Component {
     return (
       <div className="login">
         <header className="login-header">
-          <span>Welcome back! Sign in to proceed!</span>
+          <p>Welcome back! Sign in to proceed!</p>
         </header>
         <div className="login-content" onSubmit={this.handleSubmitSignIn}>
           <form className="login-form">
