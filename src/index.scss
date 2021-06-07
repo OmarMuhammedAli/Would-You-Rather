@@ -199,24 +199,25 @@ html {
 	margin: auto;
   }
   
-  .poll-nav a {
+  .poll-nav button {
 	cursor: pointer;
 	background-color: #e6e1e6;
 	width: 50%;
 	height: 50px;
 	display: flex;
 	text-decoration: none;
+	border: none;
   }
 
-  .poll-nav a:hover {
+  .poll-nav button:hover {
 	background-color: #f5f5f5;
   }
-  .poll-nav a img {
+  .poll-nav button img {
 	margin: auto;
 	margin-right: 9px;
   }
   
-  .poll-nav a p {
+  .poll-nav button p {
 	color: black;
 	text-align: center;
 	font-size: 17px;
