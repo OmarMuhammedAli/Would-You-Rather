@@ -18,7 +18,7 @@ import Nav from "./Nav";
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(handleInitialFetch());
+    this.props.handleInitialFetch();
   }
   render() {
     const { loggedIn, loading } = this.props;
@@ -56,10 +56,14 @@ class App extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  handleInitialFetch: () => dispatch(handleInitialFetch()),
+});
+
 const mapStateToProps = ({ questions, authedUser }) => ({
   questionsIDs: Object.keys(questions),
   loggedIn: authedUser !== "",
   loading: authedUser === null,
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
