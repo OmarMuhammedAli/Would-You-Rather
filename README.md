@@ -6,6 +6,37 @@ The `_DATA.js` file represents a fake database and methods that let you access t
 
 Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
+## Usage and Installation
+
+You can get the project up and running in 3 simple steps.
+
+1. Use the following command to install the required packages
+```
+npm install
+```
+OR
+```
+yarn install
+```
+2. A. You can either run in development mode using
+```
+npm start
+```
+OR
+```
+yarn start
+```
+2. B. Or run in production mode using
+```
+npm run build
+```
+Then 
+```
+yarn global add serve
+serve -s build
+```
+To run your build
+
 ## Data
 
 There are two types of objects stored in our database:
