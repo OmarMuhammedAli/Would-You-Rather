@@ -81,7 +81,7 @@ Voting options are attached to questions. They include:
 | votes             | Array | A list that contains the id of each user who voted for that option|
 | text                | String | The text of the option |
 
-Your code will talk to the database via 4 methods:
+The front-end is connected to a fake back-end which talks to the database via 4 methods:
 
 * `_getUsers()`
 * `_getQuestions()`
